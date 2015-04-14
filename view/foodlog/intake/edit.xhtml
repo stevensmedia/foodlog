@@ -1,0 +1,27 @@
+<form method="post" action="#{@action}">
+	<ul style="list-style:none;">
+		<input type="hidden" name="id" value="#{@intake.id}" />
+		<li>
+			<span class="label">Food:</span>
+			<select name="food_id">
+				#{@foods}
+			</select>
+		</li>
+		<li>
+			<span class="label">Date:</span>
+			#{@intake.date}
+		</li>
+		<input type="hidden" name="date" value="#{@intake.date}" />
+		<li>
+			<span class="label">Amount:</span>
+			<input type="text" name="amount" value="#{@intake.amount.to_s("F")}" />
+		</li>
+		<li>
+			<input type="submit" name="edit" value="#{@submit}" />
+			<?r if @delete ?>
+			<input type="submit" name="delete" value="Delete" />
+			<?r end ?>
+		</li>
+	</ul>
+</form>
+

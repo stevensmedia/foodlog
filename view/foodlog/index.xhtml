@@ -1,0 +1,5 @@
+<?r if logged_in? ?>
+<p>Welcome, #{session[:username]}! See your <a href="#{r('overview')}">Overview</a> to start.</p>
+<?r else ?>
+<p><a href="#{r('overview')}">Log in</a> to use this site.</p>
+<?r end ?>

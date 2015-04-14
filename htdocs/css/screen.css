@@ -1,0 +1,124 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+h1
+{
+	text-align: center;
+}
+
+body
+{
+	margin: 10px;
+	background: #60a0f0;
+	font-size: 12px;
+}
+
+a
+{
+	color: inherit;
+}
+
+p
+{
+	margin: 5px;
+}
+
+ul, ol
+{
+	margin-left: 10px;
+}
+
+table
+{
+	width: 100%;
+}
+
+td, th
+{
+	text-align: center;
+}
+
+.page
+{
+	width: 925px;
+	margin: 0 auto;
+}
+
+.content
+{
+	background: #ffffff;
+	padding: 15px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 15px;
+	margin: 5px auto;
+}
+
+#header
+{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+#footer
+{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.content table
+{
+	margin-left: auto;
+	margin-right: auto;
+	border-spacing: 0;
+	border-bottom: 1px solid #000000;
+	border-right: 1px solid #000000;
+	margin-bottom: 5px;
+}
+
+.content table td,
+.content table th
+{
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	padding: 2px 4px;
+}
+
+.details
+{
+	font-size: 0.75em;
+}
+
+form ul li .label
+{
+	display: inline-block;
+	width: 10%;
+	text-align: right;
+}
+
+form ul li input[type="text"],
+form ul li select
+{
+	width: 80%;
+}
+
+.graph_box
+{
+	text-align: center;
+}
+
+.graph_box .graph
+{
+	display: inline-block;
+}
+
+.graph
+{
+	width: 400px;
+	height: 350px;
+	margin: 5px auto;
+	padding: 0;
+}

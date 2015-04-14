@@ -1,0 +1,22 @@
+<?r if @previous_route ?>
+<p style="float: left"><a href="#{@previous_route}">Previous Day</a></p>
+<?r end ?>
+
+<?r if @next_route ?>
+<p style="float: right"><a href="#{@next_route}">Next Day</a></p>
+<?r end ?>
+
+<p>
+<?r if @allow_add ?>
+<a href="#{@add_route}">Add Weight</a>
+<?r end ?>
+</p>
+
+<table>
+<tr><th>Edit</th><th>Day</th><th>Weight</th></tr>
+
+<?r @weights.each do |weight| ?>
+<tr><td><a href="#{date_route(weight.date, 'edit/')}">Edit</a></td><td>#{weight.date}</td><td>#{weight.weight.to_s("F")}</td></tr>
+<?r end ?>
+
+</table>

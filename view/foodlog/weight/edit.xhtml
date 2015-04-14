@@ -1,0 +1,20 @@
+<form method="post" action="#{@action}">
+	<ul style="list-style:none;">
+		<li>
+			<span class="label">Date:</span>
+			#{@weight.date}
+		</li>
+		<input type="hidden" name="date" value="#{@weight.date}" />
+		<li>
+			<span class="label">Weight:</span>
+			<input type="text" name="weight" value="#{@weight.weight.to_s("F")}" />
+		</li>
+		<li>
+			<input type="submit" name="edit" value="#{@submit}" />
+			<?r if @delete ?>
+			<input type="submit" name="delete" value="Delete" />
+			<?r end ?>
+		</li>
+	</ul>
+</form>
+

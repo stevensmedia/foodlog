@@ -1,0 +1,47 @@
+<form method="post" action="#{@action}">
+	<ul style="list-style:none;">
+		<input type="hidden" name="id" value="#{@food.id}" />
+		<li>
+			<span class="label">Name:</span>
+			<input type="text" name="name" value="#{CGI::escapeHTML(@food.name)}" />
+		</li>
+		<li>
+			<span class="label">Calories:</span>
+			<input type="text" name="calories" value="#{@food.calories.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Fat:</span>
+			<input type="text" name="fat" value="#{@food.fat.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Saturated Fat:</span>
+			<input type="text" name="saturated_fat" value="#{@food.saturated_fat.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Cholesterol:</span>
+			<input type="text" name="cholesterol" value="#{@food.cholesterol.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Sodium:</span>
+			<input type="text" name="sodium" value="#{@food.sodium.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Carbohydrates:</span>
+			<input type="text" name="carbohydrates" value="#{@food.carbohydrates.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Fiber:</span>
+			<input type="text" name="fiber" value="#{@food.fiber.to_s("F")}" />
+		</li>
+		<li>
+			<span class="label">Protein:</span>
+			<input type="text" name="protein" value="#{@food.protein.to_s("F")}" />
+		</li>
+		<li>
+			<input type="submit" name="edit" value="#{@submit}" />
+			<?r if @delete ?>
+			<input type="submit" name="delete" value="Delete" />
+			<?r end ?>
+		</li>
+	</ul>
+</form>

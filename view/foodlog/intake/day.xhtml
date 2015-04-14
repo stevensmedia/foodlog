@@ -1,0 +1,33 @@
+<?r if @previous_route ?>
+<p style="float: left"><a href="#{@previous_route}">Previous Day</a></p>
+<?r end ?>
+
+<?r if @next_route ?>
+<p style="float: right"><a href="#{@next_route}">Next Day</a></p>
+<?r end ?>
+
+<p>
+<?r if @allow_add ?>
+<a href="#{@add_route}">Add Intake</a>
+<?r end ?>
+</p>
+
+<table>
+<tr>
+	<th>Edit</th>
+	<th>Food</th>
+	<th>Amount</th>
+	<th>Calories</th>
+</tr>
+
+<?r @intakes.each do |intake| ?>
+<tr>
+	<td><a href="#{route("edit/" + intake.id.to_s + "/")}">Edit</a></td>
+	<td>#{CGI::escapeHTML(intake.food.name)}</td>
+	<td>#{intake.amount.to_s("F")}</td>
+	<td>#{intake.calories.to_s("F")}</td>
+</tr>
+<?r end ?>
+
+<tr><th>Total</th><th></th><th></th><th>#{@total.to_s("F")}</th></tr>
+</table>

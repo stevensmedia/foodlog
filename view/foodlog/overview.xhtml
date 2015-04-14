@@ -1,0 +1,45 @@
+<div class="graph_box">
+<div id="graph_weight" class="graph"></div>
+<div id="graph_calories" class="graph"></div>
+</div>
+<script type="text/javascript">
+new Ico.LineGraph($('graph_weight'),
+                  { Baseline: #{@baseline}, Weight: #{@weights} },
+                  { width: 400,
+                    height: 350,
+                    labels: #{@day_labels},
+                    markers: false,
+                    colours: { Baseline: '#777777', Weight: '#990000' },
+                    curve_amount: 0,
+                    grid: true
+                  }
+                 );
+</script>
+
+<script type="text/javascript">
+new Ico.BarGraph($('graph_calories'),
+                  { Calories: #{@calorie_counts} },
+                  { width: 400,
+                    height: 350,
+                    labels: #{@day_labels},
+                    colours: { Calories: '#009900' },
+                    grid: true,
+                    start_value: 0
+                  }
+                 );
+</script>
+
+<table style="clear: both; width: 40em;">
+<tr>
+	<th>Day</th>
+	<th>Calories</th>
+	<th>Weight</th>
+</tr>
+<?r @days.keys.each do |day| ?>
+<tr>
+	<td>#{day}</td>
+	<td>#{@days[day][:intake].to_s("F")}</td>
+	<td>#{@days[day][:weight].to_s("F")}</td>
+</tr>
+<?r end ?>
+</table>

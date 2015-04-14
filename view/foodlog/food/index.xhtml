@@ -1,0 +1,29 @@
+<p><a href="#{route("add")}">Add new food</a></p>
+<table>
+<tr>
+	<th>Edit</th>
+	<th>Food</th>
+	<th class="details">Calories</th>
+	<th class="details">Fat</th>
+	<th class="details">Sat. Fat</th>
+	<th class="details">Chol.</th>
+	<th class="details">Sodium</th>
+	<th class="details">Carb.</th>
+	<th class="details">Fiber</th>
+	<th class="details">Protein</th>
+</tr>
+<?r @foods.each do |food| ?>
+<tr>
+	<td><a href="#{route("edit/" + food.id.to_s)}">Edit</a></td>
+	<td>#{CGI::escapeHTML(food.name)}</td>
+	<td>#{food.calories.to_s("F")}</td>
+	<td class="details">#{food.fat.to_s("F")}</td>
+	<td class="details">#{food.saturated_fat.to_s("F")}</td>
+	<td class="details">#{food.cholesterol.to_s("F")}</td>
+	<td class="details">#{food.sodium.to_s("F")}</td>
+	<td class="details">#{food.carbohydrates.to_s("F")}</td>
+	<td class="details">#{food.fiber.to_s("F")}</td>
+	<td class="details">#{food.protein.to_s("F")}</td>
+</tr>
+<?r end ?>
+</table>

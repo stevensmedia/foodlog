@@ -1,0 +1,2 @@
+#! /bin/sh
+ruby -U /usr/local/bin/ramaze start -D -P foodlog.pid
